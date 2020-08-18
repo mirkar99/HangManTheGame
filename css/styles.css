@@ -37,6 +37,7 @@ body{
     margin-top: 30px;
     color: #E2D58B;
     background: #190933;
+    transition: transform 1s ease-in;
 }
 .menu__button:hover{
     cursor: pointer;
@@ -63,9 +64,9 @@ body{
     background: #665687;
 }
 .hidden{
+    transform: scale(0);
     opacity: 0;
     visibility: hidden;
-    transform: scale(0);
 }
 .main__button{
     color: #E2D58B;
