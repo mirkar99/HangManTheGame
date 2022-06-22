@@ -1,0 +1,139 @@
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+body{
+    height: 100vh;
+    background: #B084CC;
+}
+.header{
+    position:relative;
+    top: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    background: #190933;
+    transition: top 0.5s;
+}
+.header__title{
+    font-size: 1.8em;
+    color: #E2D58B;
+}
+.menu{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 50%;
+}
+.menu__button{
+    height: 50px;
+    width: 150px;
+    margin-top: 30px;
+    color: #E2D58B;
+    background: #190933;
+    transition: transform 0.5s ease-in-out,opacity 0.5s ease-in-out;
+}
+.menu__button:hover{
+    cursor: pointer;
+    background: #665687;
+} 
+.main{
+    position: absolute;
+    display: block;
+    height: 90vh;
+    width: 100vw;
+    transition: transform 1s ease-in-out;
+}
+.viev{
+    display: flex;
+    height: 60%;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+.panel{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    height: 90%;
+    width: 50%;
+}
+.panel__img{
+    position: absolute;
+    top:5%;
+    height: 45vh;
+    width: 180px;
+    transition: opacity 0.25s ease-in-out;
+}
+.game{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    height: 40%;
+    justify-content: center;
+    background: #665687;
+}
+.game__text{
+    position: absolute;
+    bottom: 15%;
+    font-size: 50px;
+    transition: opacity .25s ease-in-out;
+}
+.hidden{
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
+}
+.game__button{
+    color: #E2D58B;
+    width: 30px;
+    height: 30px;
+    background: #190933;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    transition: opacity 0.25s ease-in-out,transform 0.25s ease-in-out;
+}
+.game__button:hover{
+    cursor: pointer;
+    background: #B084CC;
+}
+.endMenu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100vw;
+    transition: transform 0.5s ease-in;
+}
+.endMenu__button{
+    display: block;
+    height: 50px;
+    width: 150px;
+    margin-top: 30px;
+    color: #E2D58B;
+    background: #190933;
+}
+.endMenu__button:hover{
+     cursor: pointer;
+    background: #665687;
+} 
+@media only screen and (min-width: 900px) {
+    .game__text{
+        font-size: 100px;
+    }
+    .game__button{
+        height: 80px;
+        width: 80px;
+    }
+  }

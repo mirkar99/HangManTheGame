@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>HangManTheGame</title>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title ">HangMan The Game</h1>
+    </header>
+    <section class="menu">
+        <button class="menu__button">Start</button>
+    </section>
+    <main class='main hidden'>
+        <section class="viev">
+            <section class="panel">
+                <img class="panel__img" src="css/img/gameStartBackground.png">
+                <img class="panel__img hidden" src="css/img/gameFirstMistake.png">
+                <img class="panel__img hidden" src="css/img/gameSecoundMistake.png">
+                <img class="panel__img hidden" src="css/img/gameThirdMistake.png">
+                <img class="panel__img hidden" src="css/img/gameFourthMistake.png">
+                <img class="panel__img hidden" src="css/img/gameFivethMistake.png">
+                <img class="panel__img hidden" src="css/img/gameSixthMistake.png">
+                <img class="panel__img hidden" src="css/img/gameSeventhMistake.png">
+                <img class="panel__img hidden" src="css/img/gameEighthMistake.png">
+            </section>
+            <b class="viev__text hi"></b>
+        </section>
+        <section class="game">
+            <b class="game__text hidden"></b>
+            <button class="game__button" value="A">A</button>
+            <button class="game__button" value="B">B</button>
+            <button class="game__button" value="C">C</button>
+            <button class="game__button" value="D">D</button>
+            <button class="game__button" value="E">E</button>
+            <button class="game__button" value="F">F</button>
+            <button class="game__button" value="G">G</button>
+            <button class="game__button" value="H">H</button>
+            <button class="game__button" value="I">I</button>
+            <button class="game__button" value="J">J</button>
+            <button class="game__button" value="K">K</button>
+            <button class="game__button" value="L">L</button>
+            <button class="game__button" value="M">M</button>
+            <button class="game__button" value="N">N</button>
+            <button class="game__button" value="O">O</button>
+            <button class="game__button" value="P">P</button>
+            <button class="game__button" value="Q">Q</button>
+            <button class="game__button" value="R">R</button>
+            <button class="game__button" value="S">S</button>
+            <button class="game__button" value="T">T</button>
+            <button class="game__button" value="U">U</button>
+            <button class="game__button" value="V">V</button>
+            <button class="game__button" value="W">W</button>
+            <button class="game__button" value="X">X</button>
+            <button class="game__button" value="Y">Y</button>
+            <button class="game__button" value="Z">Z</button>
+        </section>
+    </main>
+    <section class="endMenu hidden">
+        <button class="endMenu__button  endMenu__button--reset">Reset</button>
+        <button class="endMenu__button  endMenu__button--goBack">Go to begin</button>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
