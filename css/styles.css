@@ -44,7 +44,7 @@ body{
     background: #665687;
 } 
 .main{
-    display: block;
+    position: absolute;
     height: 90vh;
     width: 100vw;
     transition: transform 1s ease-in-out;
@@ -86,11 +86,6 @@ body{
     font-size: 50px;
     transition: opacity .25s ease-in-out;
 }
-.hidden{
-    visibility: hidden;
-    transform: scale(0);
-    opacity: 0;
-}
 .game__button{
     color: #E2D58B;
     width: 40px;
@@ -123,6 +118,11 @@ body{
 .endMenu__button:hover{
      cursor: pointer;
     background: #665687;
+}
+.hidden{
+    visibility: hidden;
+    transform: scale(0);
+    opacity: 0;
 }
 @media only screen and (max-height: 300px) {
 .panel{
