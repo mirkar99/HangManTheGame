@@ -78,6 +78,7 @@ body{
     min-height: 40%;
     justify-content: center;
     background: #665687;
+    gap: 5px;
 }
 .game__text{
     position: absolute;
@@ -92,12 +93,9 @@ body{
 }
 .game__button{
     color: #E2D58B;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: #190933;
-    margin-right: 10px;
-    margin-left: 10px;
-    margin-top: 10px;
     transition: opacity 0.25s ease-in-out,transform 0.25s ease-in-out;
 }
 .game__button:hover{
