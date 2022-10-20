@@ -98,6 +98,7 @@ const startTheGame = function () {
         indexOfLetters.forEach(el => currentWord[el] = hiddenWord[el]);
         vievText.textContent = currentWord.join(' ');
         if (currentWord.join('') === hiddenWord.join('')) {
+          mistake = 0;
           gameText.textContent = 'You Won';
           gameText.style.color = '#E2D58B';
           whenGamesEnds();
