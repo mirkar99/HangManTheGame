@@ -76,7 +76,6 @@ const wordToHtml = async function () {
 
     currentWord.splice(0, currentWord.length)
     vievText.textContent = '';
-    console.log(hiddenWord)
 
     for (el of hiddenWord) {
       currentWord.push('_');
@@ -99,7 +98,6 @@ const startTheGame = function () {
         indexOfLetters.forEach(el => currentWord[el] = hiddenWord[el]);
         vievText.textContent = currentWord.join(' ');
         if (currentWord.join('') === hiddenWord.join('')) {
-          console.log('Its over');
           gameText.textContent = 'You Won';
           gameText.style.color = '#E2D58B';
           whenGamesEnds();
@@ -107,7 +105,6 @@ const startTheGame = function () {
       }
       if (hiddenWord.indexOf(el.value) === -1) {
         mistake++
-        console.log(mistake)
         imgPanel[mistake].classList.remove('hidden');
         if (mistake == 8) {
           mistake = 0;
