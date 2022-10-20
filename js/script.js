@@ -20,13 +20,13 @@ const hiddenWord = [];
 
 const takeWordFromApi = (a) => {
   return fetch("https://random-word-api.herokuapp.com/word")
-        .then(res => res.json())
-        .then(data => a.push([...data[0].toUpperCase()]))
-        .catch(err => {
-          console.clear();
-          console.log(`Error ${err}`);
-          return false;
-        }
+    .then(res => res.json())
+    .then(data => a.push([...data[0].toUpperCase()]))
+    .catch(err => {
+      console.clear();
+      console.log(`Error ${err}`);
+      return false;
+    }
     )
 }
 
@@ -62,8 +62,8 @@ const changeEndMenu = function (removeClassHidden) {
 //Game elements
 const wordToHtml = async function () {
   try {
-    const a=await takeWordFromApi(wordBase);
-    if(a!==false){
+    const a = await takeWordFromApi(wordBase);
+    if (a !== false) {
       wordBase.splice(0, wordBase.length - 1)
     }
   } finally {
@@ -85,56 +85,42 @@ const wordToHtml = async function () {
   }
 };
 const startTheGame = function () {
-  let noLetter = 0;
   let mistake = 0;
   letterButtons.forEach((el) => {
     el.addEventListener('click', function () {
       el.classList.add('hidden');
-      hiddenWord.forEach((arr, i) => {
-        if (el.value == arr) {
-          noLetter = null;
-          currentWord[i] = arr;
-          if (hiddenWord.join(' ') == currentWord.join(' ')) {
-            mistake = 0;
-            gameText.textContent = 'You Won'
-            gameText.style.color = '#E2D58B';
-            whenGamesEnds();
+      if (hiddenWord.indexOf(el.value) > -1) {
+        let indexOfLetters = hiddenWord.reduce((acc, hel, i) => {
+          if (hel === el.value) {
+            acc.push(i);
           }
-        } else {
-          if (noLetter !== null) {
-            noLetter++;
-          }
-          if (noLetter == hiddenWord.length) {
-            mistake += 1;
-            if (mistake == 1) {
-              imgPanel[1].classList.remove('hidden');
-            } else if (mistake == 2) {
-              imgPanel[2].classList.remove('hidden');
-            } else if (mistake == 3) {
-              imgPanel[3].classList.remove('hidden');
-            } else if (mistake == 4) {
-              imgPanel[4].classList.remove('hidden');
-            } else if (mistake == 5) {
-              imgPanel[5].classList.remove('hidden');
-            } else if (mistake == 6) {
-              imgPanel[6].classList.remove('hidden');
-            } else if (mistake == 7) {
-              imgPanel[7].classList.remove('hidden');
-            } else if (mistake == 8) {
-              imgPanel[8].classList.remove('hidden');
-              mistake = 0;
-              gameText.textContent = `You Lose`;
-              gameText.style.color = '#190933';
-              whenGamesEnds();
-            }
-          }
+          return acc;
+        }, [])
+        indexOfLetters.forEach(el => currentWord[el] = hiddenWord[el]);
+        vievText.textContent = currentWord.join(' ');
+        if (currentWord.join('') === hiddenWord.join('')) {
+          console.log('Its over');
+          gameText.textContent = 'You Won';
+          gameText.style.color = '#E2D58B';
+          whenGamesEnds();
         }
-      });
-      noLetter = 0;
-      vievText.textContent = `${currentWord.join(' ')} `;
+      }
+      if (hiddenWord.indexOf(el.value) === -1) {
+        mistake++
+        console.log(mistake)
+        imgPanel[mistake].classList.remove('hidden');
+        if (mistake == 8) {
+          mistake = 0;
+          vievText.textContent = hiddenWord.join(' ')
+          gameText.textContent = `You Lose`;
+          gameText.style.color = '#190933';
+          whenGamesEnds();
+        }
+      }
     });
   });
 };
+
 const whenGamesEnds = function () {
   letterButtons.forEach((el) => {
     el.classList.add('hidden');
@@ -144,7 +130,7 @@ const whenGamesEnds = function () {
     changeGameSection()
     changeEndMenu(true);
     gameText.classList.add('hidden');
-  }, 2000)
+  }, 5000)
 };
 
 //Button's functions
