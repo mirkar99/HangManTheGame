@@ -14,7 +14,11 @@ const restetBtn = document.querySelector('.endMenu__button--reset');
 const goBackBtn = document.querySelector('.endMenu__button--goBack');
 
 
-const wordBase = [['B', 'R', 'E', 'A', 'D'], ['I', 'C', 'E']];
+const wordBase = [
+  ['B', 'R', 'E', 'A', 'D'], ['I', 'C', 'E'],['F','I','R','E'],['S','T','A','T','U','E'],
+  ['B','A','L','L'],['V','I','E','W'],['N','I','G','H','T'],['D','A','Y'],['L','A','M','P'],
+  ['B','O','O','K'],['L','I','Z','A','R','D'],['D','O','G'],['C','A','T'],['H','O','R','S','E']
+];
 const currentWord = [];
 const hiddenWord = [];
 
