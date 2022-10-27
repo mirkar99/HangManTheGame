@@ -35,8 +35,11 @@ const takeWordFromApi = (a) => {
 }
 
 //Change section elements
-const changeMenuSection = function (headerTop) {
+const changeHeaderSection=function(headerTop){
   header.style.top = headerTop;
+
+}
+const changeMenuSection = function () {
   menu.classList.toggle('hidden');
 
 };
@@ -137,7 +140,8 @@ const whenGamesEnds = function () {
 
 //Button's functions
 const whenMenuBtnClicked = function () {
-  changeMenuSection('0');
+  changeHeaderSection('0')
+  changeMenuSection();
   changeGameSection(true);
   wordToHtml();
 };
@@ -148,7 +152,8 @@ const whenResetBtnClicked = function () {
 };
 const whenGoBackBtnClicked = function () {
   changeEndMenu();
-  changeMenuSection('40%');
+  changeHeaderSection('40%')
+  changeMenuSection();
   changeGameSection();
 };
 
