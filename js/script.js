@@ -13,12 +13,12 @@ const endMenu = document.querySelector('.endMenu');
 const restetBtn = document.querySelector('.endMenu__button--reset');
 const goBackBtn = document.querySelector('.endMenu__button--goBack');
 
-
 const wordBase = [
-  ['B', 'R', 'E', 'A', 'D'], ['I', 'C', 'E'],['F','I','R','E'],['S','T','A','T','U','E'],
-  ['B','A','L','L'],['V','I','E','W'],['N','I','G','H','T'],['D','A','Y'],['L','A','M','P'],
-  ['B','O','O','K'],['L','I','Z','A','R','D'],['D','O','G'],['C','A','T'],['H','O','R','S','E']
+  ['B', 'R', 'E', 'A', 'D'], ['I', 'C', 'E'], ['F', 'I', 'R', 'E'], ['S', 'T', 'A', 'T', 'U', 'E'],
+  ['B', 'A', 'L', 'L'], ['V', 'I', 'E', 'W'], ['N', 'I', 'G', 'H', 'T'], ['D', 'A', 'Y'], ['L', 'A', 'M', 'P'],
+  ['B', 'O', 'O', 'K'], ['L', 'I', 'Z', 'A', 'R', 'D'], ['D', 'O', 'G'], ['C', 'A', 'T'], ['H', 'O', 'R', 'S', 'E']
 ];
+
 const currentWord = [];
 const hiddenWord = [];
 
@@ -35,13 +35,11 @@ const takeWordFromApi = (a) => {
 }
 
 //Change section elements
-const changeHeaderSection=function(headerTop){
+const changeHeaderSection = function (headerTop) {
   header.style.top = headerTop;
-
 }
 const changeMenuSection = function () {
   menu.classList.toggle('hidden');
-
 };
 const changeGameSection = function (removeClassHidden) {
   main.classList.add("hidden");
@@ -65,7 +63,6 @@ const changeEndMenu = function (removeClassHidden) {
     endMenu.classList.remove('hidden');
   }
 };
-
 //Game elements
 const wordToHtml = async function () {
   try {
@@ -125,7 +122,6 @@ const startTheGame = function () {
     });
   });
 };
-
 const whenGamesEnds = function () {
   letterButtons.forEach((el) => {
     el.classList.add('hidden');
@@ -156,7 +152,6 @@ const whenGoBackBtnClicked = function () {
   changeMenuSection();
   changeGameSection();
 };
-
 startTheGame();
 //Button's with events and  functions
 menuBtn.addEventListener('click', () => {
