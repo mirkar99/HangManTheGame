@@ -66,8 +66,8 @@ const changeEndMenu = function (removeClassHidden) {
 //Game elements
 const wordToHtml = async function () {
   try {
-    const a = await takeWordFromApi(wordBase);
-    if (a !== false) {
+    const wordApi = await takeWordFromApi(wordBase);
+    if (wordApi !== false) {
       wordBase.splice(0, wordBase.length - 1)
     }
   } finally {
