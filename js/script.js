@@ -21,7 +21,6 @@ const wordBase = [
 
 const currentWord = [];
 const hiddenWord = [];
-
 const takeWordFromApi = (a) => {
   return fetch("https://random-word-api.herokuapp.com/word")
     .then(res => res.json())
@@ -65,16 +64,17 @@ const changeEndMenu = function (removeClassHidden) {
 };
 //Game elements
 const wordToHtml = async function () {
+  const wordArry = [];
   try {
-    const wordApi = await takeWordFromApi(wordBase);
-    if (wordApi !== false) {
-      wordBase.splice(0, wordBase.length - 1)
+    const wordApi = await takeWordFromApi(wordArry);
+    if (wordApi == false) {
+      wordBase.forEach( el=> wordArry.push(el))
     }
   } finally {
     hiddenWord.splice(0, hiddenWord.length)
-    let random = Math.floor(Math.random() * wordBase.length);
+    let random = Math.floor(Math.random() * wordArry.length);
 
-    wordBase[random].forEach((el, i) => {
+    wordArry[random].forEach((el, i) => {
       hiddenWord.push(el);
     })
 
