@@ -148,7 +148,7 @@ const whenResetBtnClicked = function () {
 };
 const whenGoBackBtnClicked = function () {
   changeEndMenu();
-  changeHeaderSection('40%')
+  changeHeaderSection('30%')
   changeMenuSection();
   changeGameSection();
 };
